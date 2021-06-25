@@ -1,8 +1,5 @@
 # A simple Javascript mail server build with sails
 
-Enter your Email to test
-
-
 
 a [Sails v1](https://sailsjs.com) application
 

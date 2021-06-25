@@ -26,11 +26,12 @@ setTimeout(function sunrise () {
         <div class="step">
           <div class="sprite one"></div>
           <h3>Send Test Email</h3>
-          <!-- <p>
-            If you're new to Sails, get started <a href="https://sailsjs.com/get-started">here</a>.
-            <br/>
-            <small>(You'll learn about the framework and explore the files that were generated in this new app.)</small>
-          </p> -->
+          <form action="/?email=" method="POST" class="form-group">
+            <div class="col-sm-8">
+              <input class="form-control" type="text" placeholder="johndoe@example.com">
+              <button style="margin-top: 5px;" type="submit" class="btn-dark btn-sm">Send</button>
+            </div>
+          </form>
         </div>
       </li>
       
