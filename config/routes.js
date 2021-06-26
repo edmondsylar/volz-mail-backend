@@ -20,6 +20,10 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/homepage' },
+  '/mail' : {view: 'pages/homepage'},
+
+  //POST Routes
+  'POST /testing' : {action: 'backend/testing'}
 
 
   /***************************************************************************
