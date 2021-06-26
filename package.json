@@ -10,6 +10,7 @@
     "@sailshq/socket.io-redis": "^5.2.0",
     "email": "^0.2.6",
     "grunt": "1.0.4",
+    "nodemailer": "^6.6.2",
     "sails": "^1.4.3",
     "sails-hook-grunt": "^4.0.0",
     "sails-hook-orm": "^3.0.2",

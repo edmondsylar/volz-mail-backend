@@ -1,4 +1,5 @@
 var Email = require('email').Email
+// const { main } = require("../../helpers/Mail-helper");
 
 
 module.exports = {
@@ -30,24 +31,23 @@ module.exports = {
 
 
   fn: async function ({emailAd}) {
-    
-    // lets process the request from here.
-    console.log(emailAd);
-
-    var myMsg = new Email({
-      from: "edmondmusiitwa@gmail.com",
-      to: emailAd,
-      subject: "Email Testing",
-      body: `Hello visitor, the emails sending is working just fine so mind fucking Godamn business.`
+  
+    // lets try calling the Mail-helpers 'main function'
+    await sails.helpers.mail.with({
+      email: 'Checking if we can access this helpers'
     });
-
-    myMsg.send(function(err){
-      console.log(err);
-
-    })
-    // we need a success log for if the msg is sent.
-
-    // All done.
+    
+    // redirect to the home page on a success reception of the email here.
+    var scode = this.res.statusCode;
+    if (scode == 200) {
+      try {
+        this.res.redirect('/');
+      } catch (error) {
+        // try to redirect back the homepage.
+        console.log(error);
+      }
+    }
+    
     return;
 
   }
