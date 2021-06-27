@@ -29,7 +29,7 @@ module.exports = {
 
   fn: async function ({email}) {
     // get the random user credentials
-    let testAccount = nodemailer.createTestAccount();
+    let testAccount = nodemailer.createTestAccount(); // this has been ignored.
 
     // create the email transporter.
     let transporter = nodemailer.createTransport({
@@ -46,7 +46,7 @@ module.exports = {
     // now here lets send the email.
     let info = await transporter.sendMail({
         from: '"volzvok LTD" <service@volzvok.com>',
-        to: 'edmondmusiitwa@gmail.com, edmondmusiitwa@volzvok.onmicrosoft.com',
+        to: '%s,service@volzvok.com', email,
         subject: "Reachout Testing",
         test: "Your test email is here.",
         html: "<b>Your test email is here"
@@ -59,14 +59,3 @@ module.exports = {
 
 
 };
-
-// To call this helper:
-
-//           // With default usage:
-//           await sails.helpers.mail(…, …);
-
-//           // With named parameters:
-//           await sails.helpers.mail.with({
-//             someInput: …,
-//             someOtherInput: …
-//           });
