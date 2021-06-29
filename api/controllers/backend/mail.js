@@ -5,7 +5,7 @@ var Email = require('email').Email
 module.exports = {
 
 
-  friendlyName: 'Testing',
+  friendlyName: 'Mail',
 
 
   description: 'We are doing Ajax-form testing with this route here ',
@@ -16,6 +16,12 @@ module.exports = {
     emailAd :{
       description: "The test email to use the testing",
       type: 'string',
+      required: true
+    },
+
+    desc: {
+      description: "Simple Email description to send to the used email in the email prompt.",
+      type: "string",
       required: true
     }
     
@@ -30,11 +36,12 @@ module.exports = {
   },
 
 
-  fn: async function ({emailAd}) {
+  fn: async function ({emailAd, desc}) {
   
     // lets try calling the Mail-helpers 'main function'
     await sails.helpers.mail.with({
-      email: 'Checking if we can access this helpers'
+      email: emailAd,
+      description: desc
     });
     
     // redirect to the home page on a success reception of the email here.
