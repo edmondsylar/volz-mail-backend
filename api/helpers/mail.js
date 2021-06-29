@@ -14,6 +14,10 @@ module.exports = {
     email: {
       type: 'string',
       require: true
+    },
+    description: {
+      type: 'string',
+      require: true,
     }
   },
 
@@ -27,7 +31,7 @@ module.exports = {
   },
 
 
-  fn: async function ({email}) {
+  fn: async function ({email, description}) {
     // get the random user credentials
     let testAccount = nodemailer.createTestAccount(); // this has been ignored.
 
@@ -46,10 +50,10 @@ module.exports = {
     // now here lets send the email.
     let info = await transporter.sendMail({
         from: '"volzvok LTD" <service@volzvok.com>',
-        to: '%s,service@volzvok.com', email,
-        subject: "Reachout Testing",
-        test: "Your test email is here.",
-        html: "<b>Your test email is here"
+        to: [email],
+        subject: "Volzvok Reachout",
+        test: `${description}`,
+        html: `<b>${description}</b>`
     });
 
 

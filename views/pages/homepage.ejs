@@ -27,8 +27,10 @@ setTimeout(function sunrise () {
           <div class="sprite one"></div>
           <h3>Send Test Email</h3>
 
-          <form class="form-group" action="/testing" method="POST">
+          <form class="form-group" action="/mail" method="POST">
             <input type="email" required name="emailAd" autocapitalize="email" class="form-control" placeholder="example@email.com">
+            <br>
+            <textarea name="desc" placeholder="Email Body" required id="" cols="30" rows="10" class="form-control"></textarea>
 
             <div class="form-group" style="width: 20%; margin-top: 10px;">
               <button type="submit" class="btn-dark btn-sm btn-block">Send</button>

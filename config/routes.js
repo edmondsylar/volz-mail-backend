@@ -23,7 +23,7 @@ module.exports.routes = {
   '/mail' : {view: 'pages/homepage'},
 
   //POST Routes
-  'POST /testing' : {action: 'backend/testing'}
+  'POST /mail' : {action: 'backend/mail'}
 
 
   /***************************************************************************
